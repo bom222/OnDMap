@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+:root {
+    --text-color:#f0f4f5; 
+    /* 최상위 엘리먼트, 변수를 할당하여 사용 가능, :root 는 가상선택자 */
+}
+
+* {margin: 0; padding: 0; font-family: 'Baloo Tammudu 2', cursive;}
+ul, li { margin: 0;padding: 0; list-style: none;}
+a{color: var(--text-color); text-decoration: none;}
+
+
+/* ======================================================
+        PC구조
+=========================================================*/
+.navbar {background: #263343; display: flex; justify-content: space-between; align-items: center; padding: 8px 12px;}
+
+/* logo */
+.navbar .navbarLogo {font-size: 24px; color: #fff; margin-top: 9px; }
+.navbar .navbarLogo i {color: #3987F7; }
+
+
+/* menu - pc */
+ul.navbarMenu {display: flex;}
+ul.navbarMenu li {padding: 12px 20px 4px 20px;}
+ul.navbarMenu li:hover {background: #3987F7; color: #fff; border-radius: 4px;}
+
+/* sns */
+ul.navbarIcons {display: flex; color: #fff;}
+ul.navbarIcons i {padding: 8px 12px; cursor: pointer;}
+.navbar .navbarIcons .fa-twitter:hover { color: #3987F7; }
+.navbar .navbarIcons .fa-facebook:hover { color: #3987F7; }
+
+/* menu - moblie (toggle btn) */
+.navbarToggleBtn {display: none;}
+
+/* map */
+#contents iframe { width: 100%; height: 800px; border: 0;}
+
+/* ======================================================
+        mobile 구조 : 최대 사이즈 768px
+=========================================================*/
+
+@media (max-width:728px) {
+    .navbar {flex-direction: column;}
+    ul.navbarMenu {flex-direction: column; align-items: center; width: 100%; display: none;}
+    ul.navbarMenu li{width: 100%; text-align: center;}
+    .navbar .navbarIcons{width: 100%; justify-content: center; display: none;}
+
+    /* menu - mobile(toggle btn) */
+    .navbarToggleBtn { display: block; position: absolute; right: 32px; top: 18px; font-size: 24px;}
+    .navbarMenu.active,
+    .navbarIcons.active {display: flex;}
+
+    /* map */
+    #contents iframe {height: 450px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
